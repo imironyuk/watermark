@@ -25,8 +25,8 @@ progflash_layout = [[sg.T(" "* 5),sg.T("Flash Programmig for Microocntroller"),s
                                         title_location='n' )]]
 
 progFlashWin = sg.Window ( "Program Flash", size=(800,550)).Layout ( progflash_layout )
-flashEvent, flashValue = progFlashWin.Read ( timeout=1 )
+flashEvent, flashValue = progFlashWin.Read ( timeout=100 )
 print("^C")
 
 while True:
-    flashEvent, flashValue = progFlashWin.Read ( timeout=1 )
+    flashEvent, flashValue = progFlashWin.Read ( timeout=100 )
