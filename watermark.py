@@ -7,35 +7,6 @@ from PIL import ImageFont
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
-import PySimpleGUI as sg
-import re
-layout = [
-    [sg.Text('Image       '), sg.InputText(), sg.FileBrowse(file_types=(('JPEG pictures', '*.jpg'), ('PNG pictures', '*.png'),)),
-     sg.Checkbox('RGB'), sg.Checkbox('RGBA')
-     ],
-    [sg.Text('Watermark'), sg.InputText(), sg.FileBrowse(file_types=(('PNG pictures', '*.png'), ('JPEG pictures', '*.jpg'),)),
-     sg.Checkbox('')
-     ],
-    [sg.Output(size=(135, 20))],
-     [sg.InputText(), sg.Button(("Отправить"),size=(8, 1))
-     ],
-    [sg.Submit(), sg.Cancel()]
-]
-window = sg.Window('Watermark', layout)
-while True:                             # The Event Loop
-    event, values = window.read()
-    # print(event, values) #debug
-    if event in (None, 'Exit', 'Cancel'):
-        break
-    if event == 'Submit':
-        file1 = file2 = isitago = None
-        if not file1 and file1 is not None:
-            print('Error: File 1 path not valid.')
-            print('Please choose 2 files.')
-
-
-
-
 def watermark_text(input_image_path,
                    output_image_path,
                    text):
